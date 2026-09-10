@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install yfinance pandas requests pytz
+      - run: pip install -r requirements.txt
       - run: python bot.py
         env:
           TOKEN: ${{ secrets.TOKEN }}
