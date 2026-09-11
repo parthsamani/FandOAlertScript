@@ -3,12 +3,16 @@ import pandas as pd
 import requests, os, time
 from datetime import datetime
 import pytz
+from stocks import ALL_STOCKS # 200 stocks
 
 TOKEN = os.getenv("TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
+TIMEFRAME = os.getenv("TIMEFRAME", "5m")
+PERIOD = os.getenv("PERIOD", "5d")
+CHANNEL_W = int(os.getenv("CHANNEL_WIDTH", "5"))
 
-PIVOT_LEN = 50
-CHANNEL_W = 5
+# Aapki settings
+PIVOT_LEN = 20
 VOLUME_MULT = 1.5
 MOVEMENT_MIN = 1.0
 NEAR_PCT = 0.5
